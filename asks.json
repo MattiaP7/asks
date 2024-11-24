@@ -1,0 +1,140 @@
+{
+  "questions": [
+    {
+      "question": "Quale configurazione di transistor offre un guadagno di tensione elevato?",
+      "options": [
+        "A) Base comune",
+        "B) Collettore comune",
+        "C) Emettitore comune"
+      ],
+      "correct": "C"
+    },
+    {
+      "question": "Quale componente stabilizza la frequenza di un oscillatore?",
+      "options": ["A) Induttore", "B) Quarzo", "C) Resistenza"],
+      "correct": "B"
+    },
+    {
+      "question": "Qual è la caratteristica principale di un amplificatore operazionale ideale?",
+      "options": [
+        "A) Guadagno di tensione infinito",
+        "B) Impedenza d’ingresso nulla",
+        "C) Rumore interno basso"
+      ],
+      "correct": "A"
+    },
+    {
+      "question": "In un comparatore con isteresi, il fenomeno dell’isteresi serve a:",
+      "options": [
+        "A) Migliorare la velocità di risposta",
+        "B) Ridurre le fluttuazioni tra stati alti e bassi",
+        "C) Aumentare il guadagno complessivo"
+      ],
+      "correct": "B"
+    },
+    {
+      "question": "Quale delle seguenti è una caratteristica di un amplificatore di classe B?",
+      "options": [
+        "A) Alta efficienza e alta distorsione",
+        "B) Alta efficienza e bassa distorsione",
+        "C) Bassa efficienza e bassa distorsione"
+      ],
+      "correct": "B"
+    },
+    {
+      "question": "Un filtro passa-basso ideale:",
+      "options": [
+        "A) Elimina tutte le frequenze sopra una certa soglia",
+        "B) Amplifica le frequenze basse e attenua quelle alte",
+        "C) Lascia passare solo frequenze basse, senza attenuazione"
+      ],
+      "correct": "B"
+    },
+    {
+      "question": "Cosa differenzia un oscillatore da un generatore di segnali?",
+      "options": [
+        "A) L’oscillatore non necessita di un segnale d’ingresso",
+        "B) Il generatore di segnali non può produrre onde sinusoidali",
+        "C) L’oscillatore genera solo onde quadre"
+      ],
+      "correct": "A"
+    },
+    {
+      "question": "Quale configurazione è usata per un amplificatore non invertente?",
+      "options": [
+        "A) L’ingresso è collegato al pin invertente",
+        "B) L’ingresso è collegato al pin non invertente",
+        "C) Non si utilizza retroazione"
+      ],
+      "correct": "B"
+    },
+    {
+      "question": "Un amplificatore sommatore invertente:",
+      "options": [
+        "A) Somma segnali solo se hanno la stessa frequenza",
+        "B) Utilizza resistenze verso l’ingresso invertente per sommare segnali",
+        "C) Può sommare segnali solo con amplificatori di classe A"
+      ],
+      "correct": "B"
+    },
+    {
+      "question": "Qual è l’efficienza massima teorica di un amplificatore di classe A?",
+      "options": ["A) 78.5%", "B) 50%", "C) 25%"],
+      "correct": "B"
+    },
+    {
+      "question": "Quale tipo di oscillatore utilizza un quarzo per la stabilizzazione?",
+      "options": [
+        "A) Oscillatore a ponte di Wien",
+        "B) Oscillatore RC",
+        "C) Oscillatore al quarzo"
+      ],
+      "correct": "C"
+    },
+    {
+      "question": "Un amplificatore selettivo:",
+      "options": [
+        "A) Amplifica solo le frequenze desiderate",
+        "B) Attenua tutte le frequenze tranne quelle basse",
+        "C) Ha sempre un guadagno maggiore di 1"
+      ],
+      "correct": "A"
+    },
+    {
+      "question": "L’inseguitore di tensione:",
+      "options": [
+        "A) Ha un guadagno di tensione maggiore di 1",
+        "B) Fornisce un’uscita uguale all’ingresso con alta impedenza d’uscita",
+        "C) Fornisce un’uscita uguale all’ingresso con bassa impedenza d’uscita"
+      ],
+      "correct": "C"
+    },
+    {
+      "question": "Come si ottiene una forma d’onda triangolare?",
+      "options": [
+        "A) Con un oscillatore RC semplice",
+        "B) Con un integratore seguito da un oscillatore a onda quadra",
+        "C) Con un oscillatore LC"
+      ],
+      "correct": "B"
+    },
+    {
+      "question": "Qual è la principale limitazione di un filtro reale rispetto a uno ideale?",
+      "options": [
+        "A) Perdita nelle alte frequenze",
+        "B) Transizione graduale tra banda passante e banda eliminata",
+        "C) Rumore interno maggiore"
+      ],
+      "correct": "B"
+    },
+    {
+      "question": "Un generatore sinusoidale è progettato per:",
+      "options": [
+        "A) Produrre solo onde quadre",
+        "B) Produrre onde con distorsione minima",
+        "C) Produrre onde a frequenze casuali"
+      ],
+      "correct": "B"
+    }
+  ]
+}
