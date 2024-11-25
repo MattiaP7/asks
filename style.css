@@ -1,0 +1,28 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+h1 {
+  text-align: center;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#incorrect {
+  margin-top: 20px;
+}
+
+#incorrect div {
+  margin-bottom: 10px;
+}
+
+hr {
+  border: 1px solid #ddd;
+}
