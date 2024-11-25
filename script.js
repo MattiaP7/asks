@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const questionsContainer = document.getElementById('quiz-form');
         const randomQuestions = [];
 
-        // Scegliamo 16 domande casuali da un pool di domande
+        // Scegliamo 16 domande casuali
         while (randomQuestions.length < 16) {
           const randIndex = Math.floor(Math.random() * quizData.questions.length);
           if (!randomQuestions.includes(randIndex)) {
@@ -34,29 +34,75 @@ document.addEventListener('DOMContentLoaded', function () {
           `;
           questionsContainer.appendChild(questionElem);
         });
+
+        return randomQuestions;
       }
 
-      // Funzione per calcolare il punteggio e dare un voto in decimi
-      function calculateScore() {
+      // Funzione per calcolare il punteggio e mostrare gli errori
+      function calculateScore(randomQuestions) {
         let score = 0;
-        quizData.questions.forEach((question, index) => {
+        const wrongAnswers = []; // Array per tracciare le risposte sbagliate
+
+        randomQuestions.forEach(index => {
+          const question = quizData.questions[index];
           const selectedOption = document.querySelector(`input[name="question-${index}"]:checked`);
-          if (selectedOption && selectedOption.value === question.correct) {
-            score++;
+
+          if (selectedOption) {
+            if (selectedOption.value === question.correct) {
+              score++;
+            } else {
+              // Aggiungi la domanda e le risposte errate/corrette all'array
+              wrongAnswers.push({
+                question: question.question,
+                correct: question.correct,
+                selected: selectedOption.value
+              });
+            }
+          } else {
+            // Nessuna risposta selezionata
+            wrongAnswers.push({
+              question: question.question,
+              correct: question.correct,
+              selected: "Nessuna risposta"
+            });
           }
         });
 
         const resultElem = document.getElementById('result');
         const vote = (score / 16) * 10; // Voto in decimi
 
-        resultElem.textContent = `Il tuo punteggio è: ${score}/16 (Voto: ${vote.toFixed(1)})`;
+        // Mostra il risultato
+        resultElem.innerHTML = `
+          <p>Il tuo punteggio è: ${score}/16 (Voto: ${vote.toFixed(1)})</p>
+        `;
+
+        // Mostra le risposte sbagliate
+        const wrongAnswersElem = document.getElementById('wrong-answers');
+        if (wrongAnswers.length > 0) {
+          wrongAnswersElem.innerHTML = `
+            <h3>Risposte Errate:</h3>
+            <ul>
+              ${wrongAnswers.map(wrong => `
+                <li>
+                  <strong>Domanda:</strong> ${wrong.question}<br>
+                  <strong>Risposta corretta:</strong> ${wrong.correct}<br>
+                  <strong>Risposta data:</strong> ${wrong.selected}
+                </li>
+              `).join('')}
+            </ul>
+          `;
+        } else {
+          wrongAnswersElem.innerHTML = '<p>Non hai sbagliato nessuna domanda!</p>';
+        }
       }
 
-      // Gestiamo il click sul pulsante submit
-      document.getElementById('submit-btn').addEventListener('click', calculateScore);
+      // Genera le domande e traccia l'ordine casuale
+      const randomQuestions = generateQuiz();
 
-      // Carica il quiz all’avvio
-      generateQuiz();
+      // Gestiamo il click sul pulsante submit
+      document.getElementById('submit-btn').addEventListener('click', function () {
+        calculateScore(randomQuestions);
+      });
     })
     .catch(error => console.error('Errore nel caricare il file JSON:', error));
 });
